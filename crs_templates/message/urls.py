@@ -5,4 +5,5 @@ app_name = 'message'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('new_message/', views.MessageView.as_view(), name='new_message'),
 ]
