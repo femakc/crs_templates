@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
-{% csrf_token %}
 <form method="post" action="{% url 'message:new_message' %}">
+    {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Отправить">
 </form> 

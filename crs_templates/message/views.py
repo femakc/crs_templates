@@ -3,6 +3,8 @@ from django.shortcuts import render
 from .models import Message
 from django.views.generic.edit import CreateView
 from .forms import MessageForm
+from django.urls import reverse_lazy
+
 
 
 def index(request):
@@ -20,4 +22,4 @@ def index(request):
 class MessageView(CreateView):
     form_class = MessageForm
     template_name = 'message/new_message.html'
-    success_url = 'message/index.html'
+    success_url = reverse_lazy('message:index')
