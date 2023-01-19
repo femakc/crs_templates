@@ -6,7 +6,6 @@ from .forms import MessageForm
 from django.urls import reverse_lazy
 
 
-
 def index(request):
     template = 'message/index.html'
     prod_name = 'CRS'
@@ -23,3 +22,6 @@ class MessageView(CreateView):
     form_class = MessageForm
     template_name = 'message/new_message.html'
     success_url = reverse_lazy('message:index')
+    
+    def post(self, request, *args, **kwargs): # Добавить отправку сообщения о регистрации
+        return super().post(request, *args, **kwargs)

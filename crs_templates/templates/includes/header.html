@@ -21,22 +21,22 @@
           <a class="nav-link{% if view_name  == 'message:new_message' %} active{% endif %}"
           href="{% url 'message:new_message' %}">Новое сообщение</a>
         </li>
-        {% comment %} <li class="nav-item"> 
+        <li class="nav-item"> 
           <a class="nav-link link-light {% if view_name  == 'users:password_change' %} active{% endif %}"
           href="{% url 'users:password_change' %}">Изменить пароль</a>
         </li>
         <li class="nav-item"> 
           <a class="nav-link link-light" href="{% url 'users:logout' %}">Выйти</a>
         </li>
-        <li class="nav-item">
+        {% comment %} <li class="nav-item">
           <a class="nav-link" href="{% url 'posts:profile' user.username %}">
             Пользователь: {{ user.username }}</a>
         </li> {% endcomment %}
         {% else %}
-        {% comment %} <li class="nav-item"> 
+         <li class="nav-item"> 
           <a class="nav-link link-light {% if view_name  == 'users:login' %} active{% endif %}"
           href="{% url 'users:login' %}">Войти</a>
-        </li> {% endcomment %}
+        </li>
         <li class="nav-item"> 
           <a class="nav-link link-light {% if view_name  == 'users:signup' %} active{% endif %}"
           href="{% url 'users:signup' %}">Регистрация</a>
