@@ -23,5 +23,9 @@ class MessageView(CreateView):
     template_name = 'message/new_message.html'
     success_url = reverse_lazy('message:index')
     
-    def post(self, request, *args, **kwargs): # Добавить отправку сообщения о регистрации
-        return super().post(request, *args, **kwargs)
+    def form_valid(self, form):
+        form.test_celery()
+        return super().form_valid(form)
+
+    # def post(self, request, *args, **kwargs): # Добавить отправку сообщения о регистрации
+    #     return super().post(request, *args, **kwargs)
